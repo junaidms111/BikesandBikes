@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserQuriesTable extends Migration
+class CreateSubscriptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateUserQuriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user__quries', function (Blueprint $table) {
+        Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->string('name',255);
             $table->string('email',255);
-            $table->string('phone_number',255);
-            $table->text('message');
-            $table->unsignedTinyInteger('status');
             $table->date('posting_date');
-            $table->unsignedBigInteger('users_id');
+            $table->unsignedTinyInteger('status');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ class CreateUserQuriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user__quries');
+        Schema::dropIfExists('subscriptions');
     }
 }

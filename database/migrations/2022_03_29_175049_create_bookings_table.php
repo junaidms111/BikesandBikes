@@ -15,6 +15,14 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->string('booking_email',255);
+            $table->text('message');
+            $table->unsignedTinyInteger('status');
+            $table->date('posting_date');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->unsignedBigInteger('vehicle_id');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles');
             $table->timestamps();
         });
     }

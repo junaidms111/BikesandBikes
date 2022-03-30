@@ -15,6 +15,10 @@ class CreateVehiclesImagesTable extends Migration
     {
         Schema::create('vehicles__images', function (Blueprint $table) {
             $table->id();
+            $table->string('image',255);
+            $table->string('image_type',255);
+            $table->unsignedTinyInteger('status');
+            $table->bigInteger('vehicle_id');
             $table->timestamps();
         });
     }
