@@ -18,8 +18,6 @@ class CreateVehicleFacilitiesTable extends Migration
             $table->unsignedBigInteger('vehicle_id');
             $table->unsignedBigInteger('facility_id');
             $table->unsignedTinyInteger('status');
-            $table->unsignedBigInteger('facilities_id');
-            $table->unsignedBigInteger('vehicles_id');
             $table->timestamps();
         });
     }

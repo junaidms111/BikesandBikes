@@ -26,14 +26,6 @@ class CreateUsersTable extends Migration
             $table->string('country',255);
             $table->unsignedTinyInteger('status');
             $table->string('remember_token',100)->rememberToken();
-            /*
-            $table->unsignedBigInteger('bookings_id');
-            $table->foreign('bookings_id')->references('id')->on('bookings');
-            $table->unsignedBigInteger('bookings_vehicles');
-            $table->foreign('bookings_vehicles')->references('id')->on('vehicles');
-            $table->unsignedBigInteger('subscription_id');
-            $table->foreign('subscription_id')->references('id')->on('subscriptions');
-            */
             $table->timestamps();
         });
     }

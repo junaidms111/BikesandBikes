@@ -23,6 +23,10 @@ class CreateBookingsTable extends Migration
             $table->date('end_date');
             $table->unsignedBigInteger('vehicle_id');
             $table->foreign('vehicle_id')->references('id')->on('vehicles');
+            $table->unsignedBigInteger('booking_id');
+            $table->foreign('booking_id')->references('id')->on('users');
+            $table->unsignedBigInteger('booking_vehicle_id');
+            $table->foreign('booking_vehicle_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

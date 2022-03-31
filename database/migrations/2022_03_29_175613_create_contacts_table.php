@@ -19,7 +19,8 @@ class CreateContactsTable extends Migration
             $table->string('email',255);
             $table->string('contact_number',255);
             $table->text('message');
-            $table->unsignedBigInteger('users_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

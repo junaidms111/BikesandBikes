@@ -18,6 +18,8 @@ class CreateSubscriptionsTable extends Migration
             $table->string('email',255);
             $table->date('posting_date');
             $table->unsignedTinyInteger('status');
+            $table->unsignedBigInteger('subscription__id');
+            $table->foreign('subscription__id')->references('id')->on('users');
             $table->timestamps();
         });
     }
